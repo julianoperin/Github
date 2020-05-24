@@ -15,21 +15,30 @@ class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="form">
-        <input
-          type="text"
-          name="text"
-          placeholder="Search users..."
-          onChange={this.onChange}
-        />
-        <input
-          type="text"
-          type="submit"
-          value="Search"
-          className="btn btn-dark btn-block"
-          onSubmit={this.onSubmit}
-        />
-      </form>
+      <div>
+        <form onSubmit={this.onSubmit} className="form">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search users..."
+            onChange={this.onChange}
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-dark btn-block"
+            onSubmit={this.onSubmit}
+          />
+        </form>
+        {this.props.showClear && (
+          <button
+            className="btn btn-light btn-block"
+            onClick={this.props.clearUsers}
+          >
+            Clear
+          </button>
+        )}
+      </div>
     );
   }
 }
